@@ -1,4 +1,4 @@
-# Custom_AI_Coworker
+# Custom AI Coworker
 
 ![Coworker AI](https://github.com/avechuch0/custom_ai_coworker/blob/main/images/logo.png)
 
@@ -24,14 +24,18 @@ This is the general view of a RAG concept, courtesy of LlamaIndex.
 
 1. Download / clone the repo
 2. Install required packages: ```pip3 install -r requirements.txt``` or ```pip install -r requirements.txt``` 
-3. Provide the OpenAI apikey next to the equal sign and within the quotes ```api_key = os.environ["OPENAI_API_KEY"] = 'your_apikey_here' ```
+3. Provide the OpenAI apikey next to the equal sign and within the quotes ```api_key = os.environ["OPENAI_API_KEY"] = 'your_apikey_here'```
 
 ## Usage
 
 **Command-Line Arguments**
 - **-title**: Set the title for your session, you can use your particular topic, process etc of your trained data. This is a required argument.
-- **-temp**: Set the temperature for the model’s responses. Acceptable range is 0.0 to 1.0.
-- After running it, you would be asked about the model to use, just select between 1 to 3.
+- **-temp**: Set the temperature for the model’s responses. Acceptable range is 0.0 to 1.0. If not used, by default is setup in 0.5.
+After running it, you would be asked about the model to use, just select between 1 to 3.
+
+**Examples**
+python coworker_ai.py -title "CustomData"
+python coworker_ai.py -title "ACME Corp" -temp 0.5
 
 ## Interface
 Once the program is running, you can interact with AI Coworker via a Gradio-powered web interface. Just enter your queries and receive intelligent responses.
