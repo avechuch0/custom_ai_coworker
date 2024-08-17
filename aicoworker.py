@@ -20,7 +20,7 @@ init()
 
 robot_ascii_art = f"""
 {Fore.RED}     _______              
-{Fore.RED}    /       \  Coworker AI - By avechuch0      
+{Fore.RED}    /       \  AI Coworker - By avechuch0      
 {Fore.CYAN}   |{Fore.YELLOW}  O   O  {Fore.CYAN}|           
 {Fore.CYAN}   |{Fore.RED}    >    {Fore.CYAN}|           
 {Fore.CYAN}   |  {Fore.RED}\___/  {Fore.CYAN}|           
