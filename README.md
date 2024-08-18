@@ -4,11 +4,19 @@
 
 AI Coworker is an AI-powered assistant designed to help you with various tasks in a workspace environment. It utilizes OpenAI's language models to provide intelligent responses, helping you make informed decisions and streamline your workflow.
 
-This project is a RAG (Retrieval Augmented Generation) algorithm to assist in your particular needs and data not included in LLMs market because they are not trained with your own data.
+This project leverages RAG (Retrieval-Augmented Generation) powered by LlamaIndex and the latest LLMs of OpenAI to generate accurate and contextually relevant responses based in your documentation. By using this tool, you would train and create a personal AI Coworker with your own custom data... And will be able to interact and chat with the Coworker based on that data trained.
 
 "LLMs are trained on enormous bodies of data but they aren't trained on your data", a quote from LlamaIndex.
 
-This is the general view of a RAG concept, courtesy of LlamaIndex.
+## Hold on, what is RAG?
+
+Retrieval-Augmented Generation (RAG) is a technique that enhances the response generation of AI models by retrieving relevant information from external sources or documents. Instead of relying solely on pre-trained knowledge, RAG dynamically fetches and incorporates up-to-date or context-specific data, leading to more accurate and contextually relevant responses. 
+
+## How this tool works?
+
+To enable the program to function correctly, you must place the documents you want to use about the topic you like to work in with the AI Coworker in the `docs` folder. The program will then index these documents, using them as the foundation for generating informed and precise outputs in a question-answer chat.
+
+This is the general view of a RAG concept, courtesy of LlamaIndex below
 
 ![RAG](https://github.com/avechuch0/custom_ai_coworker/blob/main/images/RAG.png)
 
@@ -27,9 +35,9 @@ To run AI Coworker, you need the following Python packages `llama-index`, `opena
 1. Download / clone the repo
 2. Install required packages: ```pip3 install -r requirements.txt``` or ```pip install -r requirements.txt``` 
 3. Provide the OpenAI apikey next to the equal sign and within the quotes ```api_key = os.environ["OPENAI_API_KEY"] = 'your_apikey_here'```
+4. Include your documents in the `docs` folder. You can use MS Office files, PDF, txt, etc.
 
 ## Usage
-
 
 **Command-Line Arguments**
 - **-title**: Set the title for your session, you can use your particular topic, process etc of your trained data. This is a required argument.
@@ -58,7 +66,7 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 ## Support
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/avechuch0)
 
-Just click on the image above if you enjoyed my work, consider to support me on buymeacoffee to keep going to get a fund to get colombian coffee or some other beverages for the hours invested in future projects.
+Just click on the image above if you enjoyed my work, consider to support me on buymeacoffee to keep going and get colombian coffee or some other beverages for the hours invested in future projects.
 
 ## Contact
 Twitter (X): [@avechuch0](https://twitter.com/avechuch0)
