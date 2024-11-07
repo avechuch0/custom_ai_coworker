@@ -28,7 +28,7 @@ robot_ascii_art = f"""
 {Fore.CYAN}    /  | |  \            
 {Fore.CYAN}   |___|_|___|           
 {Fore.CYAN}     |_| |_|
-{Style.RESET_ALL}"""
+{Style.RESET_ALL} """
 
 def select_model():
     print("Select the GPT model you want to use (ordered by cost from cheapest to most expensive):")
@@ -65,7 +65,7 @@ def create_and_save_index(directory_path, model, temperature):
     Settings.llm = OpenAI(temperature=temperature, model=model)
     return index
 
-def generate_response(input_text):
+def generate_response(input_text, history):
     # Load the existing index
     storage_context = StorageContext.from_defaults(persist_dir="./storage")
     index = load_index_from_storage(storage_context)    
@@ -74,15 +74,15 @@ def generate_response(input_text):
     return response.response
 
 def launch_interface(title, model, temperature):
-    label_text = f"Ask the AI Coworker around {title}"
-    iface = gr.Interface(
-        fn = generate_response,
-        inputs = gr.components.Textbox(lines=4, label=label_text),
-        outputs = "text",
-        title = title,
-    )    
+    iface = gr.ChatInterface(fn=generate_response, type="messages", title = title)
+    
+    with gr.Blocks() as chat: 
+        iface.render()        
+        with gr.Row():                
+            gr.Markdown("Ask and get assistance of your AI coworker")   
+
     create_and_save_index("./storage", model, temperature)
-    iface.launch(share=True)
+    chat.launch(share=True)
 
 if __name__ == "__main__":
     print(robot_ascii_art)
